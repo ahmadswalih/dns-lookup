@@ -1,1 +1,1 @@
-export { default as domainRoutes } from "./domainRoutes";
+export { default as domainRoutes } from "./routes.js";
