@@ -1,7 +1,7 @@
 import express from "express";
 import domainRoutes from "./routes/routes.js";
 const app = express();
-const port = 3000;
+const port = 7000;
 
 app.use(express.json());
 app.use("/api", domainRoutes);

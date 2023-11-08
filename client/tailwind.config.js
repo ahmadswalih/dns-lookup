@@ -10,7 +10,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
-        gayathir: ["Gayathri", "sans-serif"],
+        gayathri: ["Gayathri", "sans-serif"],
       },
       fontWeight: {
         regular: ["400"],
