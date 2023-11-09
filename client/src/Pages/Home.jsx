@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Table from "../components/Table";
 import axios from "axios";
 
@@ -17,13 +17,12 @@ const Home = () => {
     txtRecords: [["No Data Available"]],
   });
   const [loading, setLoading] = useState(false);
+  const baseUrl = process.env.REACT_APP_BASE_URL;
 
   const getDomainDetails = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(
-        `http://localhost:7000/api/domain/${domain}`
-      );
+      const response = await axios.get(`${baseUrl}/${domain}`);
       const data = response.data;
 
       // Update the domainInfo state with the received data
@@ -67,26 +66,28 @@ const Home = () => {
   };
 
   return (
-    <div className="items-center justify-center flex flex-col text-center mt-32 ">
-      <p className=" flex flex-row  ">
-        <input
-          className="bg-white shadow-sm rounded-l-md p-4 outline-none text-xl  border w-[42rem]"
-          type="text"
-          placeholder="Enter Your Domain Name ( ex : example.com)"
-          value={domain}
-          onChange={handleInputChange}
-          onKeyDown={handlKeyDown}
-        />
-        <p
-          onClick={getDomainDetails}
-          className=" cursor-pointer shadow-sm bg-blue-700 text-white font-gayathri p-4 text-center rounded-r-md"
-        >
-          Go
-        </p>
+    <div className="items-center justify-center flex flex-col text-center mt-24 md:mt-32 ">
+      <p className=" flex flex-col md:flex-row  ">
+        <div className="flex flex-row">
+          <input
+            className="bg-white shadow-sm rounded-l-md p-4 outline-none text-md md:text-xl  border w-[20rem] md:w-[42rem]"
+            type="text"
+            placeholder="Enter Your Domain Name ( ex : example.com)"
+            value={domain}
+            onChange={handleInputChange}
+            onKeyDown={handlKeyDown}
+          />
+          <p
+            onClick={getDomainDetails}
+            className=" cursor-pointer shadow-sm bg-blue-700 text-white font-gayathri p-4 text-center rounded-r-md"
+          >
+            Go
+          </p>
+        </div>
         {domainInfo.domain !== "" && (
           <p
             onClick={clearData}
-            className=" cursor-pointer shadow-sm bg-red-500 text-white font-sans p-4 ml-4 text-center rounded"
+            className=" cursor-pointer mt-3 md:mt-0 shadow-sm bg-red-500 text-white font-sans p-4 ml-4 text-center rounded"
           >
             Clear Data
           </p>
@@ -118,14 +119,15 @@ const Home = () => {
       {domainInfo.domain !== "" ? (
         <Table data={domainInfo} />
       ) : !loading ? (
-        <div className="mt-24">
-          <p className="text-2xl ">What is DNS?</p>
-          <p className="text-left items-center justify-center w-[54rem]  text-xl   mt-4">
+        <div className="mt-16 md:mt-24">
+          <p className="text-3xl font-gayathri ml-3 text-left">What is DNS?</p>
+          <p className="md:text-left text-left ml-3 md:ml-0  text-lg md:text-xl mt-4 max-w-full md:max-w-[54rem]">
             DNS stands for "Domain Name System." It's like a magic phone book
             for the internet. Just like you look up a friend's name in a phone
             book to find their phone number, your computer uses DNS to find the
             right "phone number" for websites.
-            <br /> When you want to visit a website, like{" "}
+            <br />
+            When you want to visit a website, like{" "}
             <a
               className="text-blue-600"
               target="_blank"
@@ -146,16 +148,17 @@ const Home = () => {
             a bit like a translator that helps your computer talk to websites in
             a language they understand.
           </p>
-          <p className="text-2xl mt-10 ">who maintain the DNS ?</p>
-          <p className="text-center items-center justify-center w-[54rem]  text-xl   mt-4">
-            {" "}
+          <p className="ml-3 md:ml-0 text-3xl text-left mt-10 font-gayathri">
+            Who maintains the DNS?
+          </p>
+          <p className=" ml-3 md:ml-0 text-left text-lg md:text-xl mt-4 max-w-full md:max-w-[54rem]">
             The Domain Name System (DNS) is maintained by a global network of
             organizations, with the responsibility divided among various groups
             and authorities. Here are some key players:
           </p>
           <ol
             type="1"
-            className=" list-disc list-inside text-left text-xl mt-6 justify-between"
+            className=" ml-3 md:ml-0 list-disc list-inside  text-left text-xl mt-6 mb-20 max-w-full md:max-w-[54rem]"
           >
             <li>Internet Corporation for Assigned Names and Numbers (ICANN)</li>
             <li>Internet Assigned Numbers Authority (IANA)</li>

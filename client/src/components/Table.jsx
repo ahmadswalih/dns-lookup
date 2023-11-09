@@ -2,10 +2,10 @@ import React from "react";
 
 const Table = ({ data }) => {
   return (
-    <div className="mt-24 mb-32">
-      <table class="table-auto  w-[53rem] border border-gray-400 border-rounded">
+    <div className=" mt-16 md:mt-24 mb-32">
+      <table class="table-auto w-[25rem]  md:w-[53rem] border border-gray-400 border-rounded">
         <thead className="text-3xl font-sans"></thead>
-        <tbody className="w-[66rem]  text-2xl pt-10">
+        <tbody className="w-[66rem] text-xl  md:text-2xl pt-10">
           <tr className="border-b leading-[3.5rem] border-black">
             <td className="border-r border-black">Domain</td>
             <td>{data.domain}</td>

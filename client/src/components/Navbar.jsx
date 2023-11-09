@@ -3,20 +3,22 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="flex mt-10 flex-row items-center p-4  justify-evenly">
+    <div className="flex  mt-10 flex-row items-center p-4   justify-evenly">
       <Link to="/">
         {" "}
-        <p className="text-4xl font-gayathri cursor-pointer ">DNS Lookup</p>
+        <p className=" text-3xl md:text-4xl mr-10 md:mr-0  font-gayathri cursor-pointer ">
+          DNS Lookup
+        </p>
       </Link>
-      <div className="flex text-2xl font-gayathri  justify- items-end">
+      <div className="flex text-xl md:text-2xl font-gayathri  justify- items-end">
         <Link to="/about">
           {" "}
-          <p className="mr-12 cursor-pointer">About</p>
+          <p className="mr-8 cursor-pointer">About</p>
         </Link>
-        <Link to="/documentation">
+        <a href="https://github.com/ahmadswalih/dns-lookup">
           {" "}
-          <p className="cursor-pointer">Documentation</p>
-        </Link>
+          <p className="cursor-pointer ">GitHub</p>
+        </a>
       </div>
     </div>
   );
