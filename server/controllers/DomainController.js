@@ -44,6 +44,15 @@ export const checkDomain = async (req, res) => {
           mxRecords: mxRecords,
           txtRecords: txtRecords,
         });
+        console.log({
+          domain: domain,
+          dnsRecords: records,
+          expirationDate: expirationDate,
+          ownerInfo: ownerInfo,
+          aRecords: aRecords,
+          mxRecords: mxRecords,
+          txtRecords: txtRecords,
+        });
       }
     });
   } catch (error) {
