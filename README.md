@@ -31,7 +31,7 @@ Here're some of the project's best features:
 https://github.com/ahmadswalih/dns-lookup.git
 ```
 
-<p>2. extract the zip ( if downloaded from the git )</p>
+<p>2. extract the zip ( if downloaded from the github )</p>
 
 <p>3. cd into the extracted or cloned folder</p>
 
